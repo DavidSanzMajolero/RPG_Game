@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class BulletProjectile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Rigidbody bulletRigidbody;
+    [SerializeField] private Transform bulletImpactEffect;
+
+    private void Awake()
     {
-        
+        bulletRigidbody = GetComponent<Rigidbody>();
+    }
+    private void Start()
+    {
+        float speed = 40f;
+        bulletRigidbody.velocity = transform.forward * speed;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        Instantiate(bulletImpactEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
