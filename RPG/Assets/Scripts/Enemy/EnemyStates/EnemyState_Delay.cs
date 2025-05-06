@@ -17,7 +17,6 @@ public class EnemyState_Delay : IState
     }
     public void OnExit()
     {
-        Debug.Log("empty");
     }
     public void Tick()
     {

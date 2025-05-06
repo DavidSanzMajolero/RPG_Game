@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 679285716266039892}
   - component: {fileID: 2496227350467409010}
   - component: {fileID: 2319070287687156910}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletImpactEffect: {fileID: 613433886817584985, guid: 6e845b0e80fad2d4c93ff505a0750129, type: 3}
   offSetSpawnParticles: 1
+  damage: 10

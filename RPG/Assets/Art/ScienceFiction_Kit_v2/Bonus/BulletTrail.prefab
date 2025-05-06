@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 397180686281355359}
   - component: {fileID: 397180686281355358}
+  - component: {fileID: 2088108906878290043}
+  - component: {fileID: 7905099652860183604}
   m_Layer: 0
   m_Name: BulletTrail
   m_TagString: Untagged
@@ -145,3 +147,36 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 0
+--- !u!65 &2088108906878290043
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397180686281355357}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.9564838, y: 2.770139, z: 1}
+  m_Center: {x: -0.9782419, y: -0.8850695, z: 0}
+--- !u!114 &7905099652860183604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397180686281355357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0076b0a70e95af4db6cd1359ebddc10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

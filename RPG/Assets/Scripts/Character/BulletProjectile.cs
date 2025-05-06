@@ -7,6 +7,7 @@ public class BulletProjectile : MonoBehaviour
     private Rigidbody bulletRigidbody;
     [SerializeField] private Transform bulletImpactEffect;
     [SerializeField] private float offSetSpawnParticles = 0.5f;
+    public float damage = 10f;  // Daño de la bala
 
     private void Awake()
     {
@@ -22,7 +23,16 @@ public class BulletProjectile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Instantiate(bulletImpactEffect, transform.position - transform.forward*offSetSpawnParticles, Quaternion.identity);
-        Destroy(gameObject);
-        
+        if (other.CompareTag("Enemy"))
+        {
+            EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(damage);  
+            }
+        }
+        Destroy(gameObject); 
     }
+
 }
+
