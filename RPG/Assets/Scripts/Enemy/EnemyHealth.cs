@@ -17,8 +17,16 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
-        openDoorObj.OpenDoorEvent();
-        GameManager.Instance.SpawnNewEnemy();
         Destroy(gameObject);
+        if (openDoorObj == null)
+        {
+            Debug.Log("OpenDoor is already open.");
+            return;
+        }
+        else
+        {
+            GameManager.Instance.SpawnNewEnemy();
+            openDoorObj.OpenDoorEvent();
+        }
     }
 }

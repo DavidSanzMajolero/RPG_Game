@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     private bool firstTime = true;
 
+    public Transform player;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -24,8 +26,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+
         CoversInterior.SetActive(true);
         CoversExterior.SetActive(false);
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+        }
     }
 
     public void SpawnNewEnemy()
@@ -42,11 +48,12 @@ public class GameManager : MonoBehaviour
         Destroy(CoversInterior);
         CoversExterior.SetActive(true);
 
-        yield return new WaitForSeconds(5f); // Esperar 5 segundos
+        yield return new WaitForSeconds(5f); 
 
         if (PBRExterior != null && spawnPoint != null)
         {
             Instantiate(PBRExterior, spawnPoint.position, Quaternion.identity);
         }
     }
+
 }

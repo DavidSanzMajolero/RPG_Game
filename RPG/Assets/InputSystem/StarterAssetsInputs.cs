@@ -7,7 +7,6 @@ namespace StarterAssets
 {
 	public class StarterAssetsInputs : MonoBehaviour
 	{
-		[Header("Character Input Values")]
 		public Vector2 move;
 		public Vector2 look;
 		public bool jump;
@@ -15,14 +14,12 @@ namespace StarterAssets
         public bool aim;
         public bool shoot;
 
-        [Header("Movement Settings")]
 		public bool analogMovement;
 
-		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
 
-#if ENABLE_INPUT_SYSTEM
+
 		public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
@@ -52,8 +49,6 @@ namespace StarterAssets
         {
             AimInput(value.isPressed);
         }
-#endif
-
 
         public void MoveInput(Vector2 newMoveDirection)
 		{

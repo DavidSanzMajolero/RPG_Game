@@ -116,11 +116,20 @@ namespace StarterAssets
 
         private void Update()
         {
-            _hasAnimator = TryGetComponent(out _animator);
+            if (FinalTrigger.Instance.playerEntered)
+            {
+                _animator.SetBool("Dancing", true);
+                Debug.Log("Mueveme esa chapa");
+                return;
+            }
+            else
+            {
+                _hasAnimator = TryGetComponent(out _animator);
 
-            JumpAndGravity();
-            GroundedCheck();
-            Move();
+                JumpAndGravity();
+                GroundedCheck();
+                Move();
+            }
         }
 
         private void LateUpdate()
